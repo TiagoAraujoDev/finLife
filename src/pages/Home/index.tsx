@@ -11,6 +11,7 @@ import {
   TransactionsContainer,
   TransactionTable,
 } from "./styles";
+import { currencyFormatter, dateFormatter } from "../../utils/formatter";
 
 
 export const Home = () => {
@@ -30,11 +31,12 @@ export const Home = () => {
                   <td width="50%">{transaction.description}</td>
                   <td>
                     <PriceHighlight variant={transaction.type}>
-                      R${transaction.amount.toFixed(2)}
+                      {transaction.type === "outcome" && "- "}
+                      {currencyFormatter.format(transaction.amount)}
                     </PriceHighlight>
                   </td>
                   <td>{transaction.category}</td>
-                  <td>{transaction.createAt}</td>
+                  <td>{dateFormatter.format(new Date(transaction.createAt))}</td>
                 </tr>
               );
             })}

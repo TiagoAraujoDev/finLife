@@ -5,7 +5,7 @@
       "description": "Web development",
       "type": "income",
       "amount": 1200,
-      "category": "sell",
+      "category": "Work",
       "createAt": "2022-11-14T15:30:30.608Z"
     },
     {
@@ -13,8 +13,24 @@
       "description": "Hamburguer",
       "type": "outcome",
       "amount": 50,
-      "category": "food",
-      "createAt": "2022-10-14T15:12:30.608Z"
+      "category": "Food",
+      "createAt": "2022-10-14T15:12:18.608Z"
+    },
+    {
+      "id": 3,
+      "description": "New shoe",
+      "type": "outcome",
+      "amount": 140,
+      "category": "Outfit",
+      "createAt": "2022-10-13T18:52:39.608Z"
+    },
+    {
+      "id": 4,
+      "description": "Rent",
+      "type": "income",
+      "amount": 300,
+      "category": "Actives",
+      "createAt": "2022-10-10T13:42:40.608Z"
     }
   ]
 }
