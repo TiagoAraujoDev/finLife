@@ -1,0 +1,20 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "description": "Web development",
+      "type": "income",
+      "amount": 1200,
+      "category": "sell",
+      "createAt": "2022-11-14T15:30:30.608Z"
+    },
+    {
+      "id": 2,
+      "description": "Hamburguer",
+      "type": "outcome",
+      "amount": 50,
+      "category": "food",
+      "createAt": "2022-10-14T15:12:30.608Z"
+    }
+  ]
+}
