@@ -1,4 +1,7 @@
+import { useContext } from "react";
 import { ArrowCircleDown, ArrowCircleUp, CurrencyDollar } from "phosphor-react";
+
+import { TransactionsContext } from "../../contexts/TransactionsContext";
 
 import {
   AmountDisplay,
@@ -8,6 +11,9 @@ import {
 } from "./styles";
 
 export const Dashboard = () => {
+  const { transactions } = useContext(TransactionsContext)
+
+  console.log(transactions)
   return (
     <DashboardContainer>
       <DashboardCard>
