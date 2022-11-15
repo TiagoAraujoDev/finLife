@@ -11,6 +11,7 @@ interface Transaction {
 
 interface TransactionsContextType {
   transactions: Transaction[];
+  fetchTransactions: (query?: string) => Promise<void>;
 }
 
 interface TransactionsProviderProps {
@@ -19,7 +20,9 @@ interface TransactionsProviderProps {
 
 export const TransactionsContext = createContext({} as TransactionsContextType);
 
-export const TransactionsProvider = ({ children }: TransactionsProviderProps) => {
+export const TransactionsProvider = ({
+  children,
+}: TransactionsProviderProps) => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
 
   const fetchTransactions = async () => {
@@ -34,7 +37,7 @@ export const TransactionsProvider = ({ children }: TransactionsProviderProps) =>
   }, []);
 
   return (
-    <TransactionsContext.Provider value={{ transactions }}>
+    <TransactionsContext.Provider value={{ transactions, fetchTransactions }}>
       {children}
     </TransactionsContext.Provider>
   );

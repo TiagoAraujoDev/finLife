@@ -22,14 +22,21 @@ const createNewTransactionSchema = zod.object({
 type TransactionFormData = zod.infer<typeof createNewTransactionSchema>;
 
 export const NewTransactionModal = () => {
-  const { handleSubmit, register, control } = useForm<TransactionFormData>({
+  const {
+    handleSubmit,
+    register,
+    formState: { isSubmitting },
+    control,
+  } = useForm<TransactionFormData>({
     resolver: zodResolver(createNewTransactionSchema),
     defaultValues: {
       type: "income",
     },
   });
 
-  const handleCreateNewTransaction = (data: TransactionFormData) => {
+  const handleCreateNewTransaction = async (data: TransactionFormData) => {
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
     console.log(data);
   };
 
@@ -82,7 +89,9 @@ export const NewTransactionModal = () => {
               );
             }}
           />
-          <button type="submit">Add transaction</button>
+          <button type="submit" disabled={isSubmitting}>
+            Add transaction
+          </button>
         </form>
       </Content>
     </Dialog.Portal>
