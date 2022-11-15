@@ -1,6 +1,7 @@
 import { ArrowCircleDown, ArrowCircleUp, CurrencyDollar } from "phosphor-react";
 
 import { currencyFormatter } from "../../utils/formatter";
+import { useGetSummary } from "../../hooks/useGetSummary";
 
 import {
   AmountDisplay,
@@ -8,7 +9,6 @@ import {
   DashboardContainer,
   Header,
 } from "./styles";
-import { useGetSummary } from "../../hooks/useGetSummary";
 
 export const Dashboard = () => {
   const summary = useGetSummary();
