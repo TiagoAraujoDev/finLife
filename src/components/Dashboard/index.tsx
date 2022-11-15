@@ -1,7 +1,5 @@
-import { useContext } from "react";
 import { ArrowCircleDown, ArrowCircleUp, CurrencyDollar } from "phosphor-react";
 
-import { TransactionsContext } from "../../contexts/TransactionsContext";
 import { currencyFormatter } from "../../utils/formatter";
 
 import {
@@ -10,23 +8,10 @@ import {
   DashboardContainer,
   Header,
 } from "./styles";
+import { useGetSummary } from "../../hooks/useGetSummary";
 
 export const Dashboard = () => {
-  const { transactions } = useContext(TransactionsContext);
-
-  const summary = transactions.reduce(
-    (acc, transaction) => {
-      if (transaction.type === "income") {
-        acc.income += transaction.amount;
-        acc.total += transaction.amount;
-      } else {
-        acc.outcome -= transaction.amount;
-        acc.total -= transaction.amount;
-      }
-      return acc;
-    },
-    { income: 0, outcome: 0, total: 0 }
-  );
+  const summary = useGetSummary();
 
   return (
     <DashboardContainer>
