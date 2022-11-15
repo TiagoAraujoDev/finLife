@@ -31,6 +31,22 @@
       "amount": 300,
       "category": "Actives",
       "createAt": "2022-10-10T13:42:40.608Z"
+    },
+    {
+      "description": "Dinner",
+      "amount": 30,
+      "category": "Food",
+      "type": "outcome",
+      "createAt": "2022-11-15T22:28:45.445Z",
+      "id": 5
+    },
+    {
+      "description": "new shoe",
+      "amount": 75,
+      "category": "clothes",
+      "type": "outcome",
+      "createAt": "2022-11-15T22:36:39.275Z",
+      "id": 6
     }
   ]
 }
