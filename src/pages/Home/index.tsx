@@ -1,6 +1,7 @@
 import { useContext } from "react";
 
 import { TransactionsContext } from "../../contexts/TransactionsContext";
+import { currencyFormatter, dateFormatter } from "../../utils/formatter";
 
 import { Dashboard } from "../../components/Dashboard";
 import { Header } from "../../components/Header";
@@ -11,7 +12,6 @@ import {
   TransactionsContainer,
   TransactionTable,
 } from "./styles";
-import { currencyFormatter, dateFormatter } from "../../utils/formatter";
 
 
 export const Home = () => {
